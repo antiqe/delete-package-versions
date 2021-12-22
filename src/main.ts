@@ -19,9 +19,7 @@ function getActionInput(): Input {
     token: getInput('token'),
     dryRun: getInput('dry-run') === 'true'
   })
-  console.log('input => ', input)
-  console.log('packageName => ', getInput('package-name'))
-  console.log({context})
+  console.log(context.payload.registry_package)
   return input
 }
 

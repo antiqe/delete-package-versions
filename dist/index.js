@@ -6023,9 +6023,7 @@ function getActionInput() {
         token: core_1.getInput('token'),
         dryRun: core_1.getInput('dry-run') === 'true'
     });
-    console.log('input => ', input);
-    console.log('packageName => ', core_1.getInput('package-name'));
-    console.log({ context: github_1.context });
+    console.log(github_1.context.payload.registry_package);
     return input;
 }
 function run() {
