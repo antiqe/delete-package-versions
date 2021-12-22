@@ -6023,7 +6023,7 @@ function getActionInput() {
         token: core_1.getInput('token'),
         dryRun: core_1.getInput('dry-run') === 'true'
     });
-    console.log(github_1.context.payload.registry_package);
+    console.log(core_1.getInput('package-name'));
     return input;
 }
 function run() {
