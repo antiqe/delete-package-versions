@@ -1,4 +1,4 @@
-import {getInput, setFailed} from '@actions/core'
+import {getInput, setFailed, debug} from '@actions/core'
 import {context} from '@actions/github'
 import {Input} from './input'
 import {Observable, throwError} from 'rxjs'
@@ -6,7 +6,7 @@ import {deleteVersions} from './delete'
 import {catchError} from 'rxjs/operators'
 
 function getActionInput(): Input {
-  return new Input({
+  const input = new Input({
     packageVersionIds: getInput('package-version-ids')
       ? getInput('package-version-ids').split(',')
       : [],
@@ -19,6 +19,8 @@ function getActionInput(): Input {
     token: getInput('token'),
     dryRun: getInput('dry-run') === 'true'
   })
+  console.log(input)
+  return input
 }
 
 function run(): Observable<boolean> {
