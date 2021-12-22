@@ -19,6 +19,7 @@ function getActionInput(): Input {
     token: getInput('token'),
     dryRun: getInput('dry-run') === 'true'
   })
+  console.log('input => ', input)
   debug(`debug package name => ${input.packageName}`)
   return input
 }
