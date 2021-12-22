@@ -1,4 +1,4 @@
-import {getInput, setFailed, debug} from '@actions/core'
+import {getInput, setFailed} from '@actions/core'
 import {context} from '@actions/github'
 import {Input} from './input'
 import {Observable, throwError} from 'rxjs'
@@ -20,7 +20,8 @@ function getActionInput(): Input {
     dryRun: getInput('dry-run') === 'true'
   })
   console.log('input => ', input)
-  debug(`debug package name => ${input.packageName}`)
+  console.log('packageName => ', getInput('package-name'))
+  console.log({context})
   return input
 }
 

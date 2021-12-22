@@ -6024,7 +6024,8 @@ function getActionInput() {
         dryRun: core_1.getInput('dry-run') === 'true'
     });
     console.log('input => ', input);
-    core_1.debug(`debug package name => ${input.packageName}`);
+    console.log('packageName => ', core_1.getInput('package-name'));
+    console.log({ context: github_1.context });
     return input;
 }
 function run() {
