@@ -6023,7 +6023,7 @@ function getActionInput() {
         token: core_1.getInput('token'),
         dryRun: core_1.getInput('dry-run') === 'true'
     });
-    console.log(input);
+    core_1.debug(`debug package name => ${input.packageName}`);
     return input;
 }
 function run() {
